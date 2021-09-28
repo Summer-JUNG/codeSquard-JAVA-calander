@@ -38,15 +38,21 @@ public class Calander {
 
 	public static void main(String[] args) {
 
+		String PROMPT = "Cal> ";
 		Scanner scanner = new Scanner(System.in);
 		Calander cal = new Calander();
-
-		System.out.println("반복 횟수를 입력하세요.");
-		int repeat = scanner.nextInt();
-
-		for (int i = 0; i < repeat; i++) {
+		
+		while (true) {
 			System.out.println("월을 입력하세요.");
+			System.out.print(PROMPT);
 			int month = scanner.nextInt();
+			
+			if (month == -1) {
+				break;
+			} else if (month > 12 || month <1) {
+				continue;
+			}
+			
 			System.out.printf("%d월은 %d일까지 있습니다.\n", month, cal.getMaxDaysOfMonth(month));
 		}
 		
