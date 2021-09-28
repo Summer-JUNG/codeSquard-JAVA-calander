@@ -9,9 +9,9 @@ public class Calander {
 	public static int getMaxDaysOfMonth(int month) {
 		return MAX_DAYS[month - 1];
 	}
-	
+
 	public static int switchCalander(int month) {
-		switch(month) {
+		switch (month) {
 		case 2:
 			return 28;
 		case 4:
@@ -41,15 +41,16 @@ public class Calander {
 		Scanner scanner = new Scanner(System.in);
 		Calander cal = new Calander();
 
-		cal.printSampleCalander();
-		
-		System.out.println("달을 입력하세요.");
+		System.out.println("반복 횟수를 입력하세요.");
+		int repeat = scanner.nextInt();
 
-		int month = scanner.nextInt();
-
-		System.out.printf("%d월은 %d일까지 있습니다.\n", month, cal.getMaxDaysOfMonth(month));
-		System.out.printf("%d월은 %d일까지 있습니다.", month, cal.switchCalander(month));
+		for (int i = 0; i < repeat; i++) {
+			System.out.println("월을 입력하세요.");
+			int month = scanner.nextInt();
+			System.out.printf("%d월은 %d일까지 있습니다.\n", month, cal.getMaxDaysOfMonth(month));
+		}
 		
+		System.out.println("Done");
 		scanner.close();
 	}
 
