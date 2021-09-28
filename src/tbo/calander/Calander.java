@@ -15,15 +15,10 @@ public class Calander {
 		System.out.println("달을 입력하세요.");
 		
 		Scanner scanner = new Scanner(System.in);
-		int input = scanner.nextInt();
+		int month = scanner.nextInt();
 		
-		if ((input <= 7 && input % 2 == 1) || (input >= 8 && input % 2 == 0)) {
-			System.out.printf("%d월은 31일까지 있습니다.", input);
-		} else if (input == 2) {
-			System.out.printf("%d월은 28일까지 있습니다.", input);
-		} else {
-			System.out.printf("%d월은 30일까지 있습니다.", input);
-		}
+		int[] maxMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+		System.out.printf("%d월은 %d일까지 있습니다.", month, maxMonth[month - 1]);
 		scanner.close();
 	}
 
